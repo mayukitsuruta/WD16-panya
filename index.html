@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAL Boulangerie</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-container">
+          <img src="images/logo.png" alt="HAL Boulangerie" class="logo-img" />
+        </div>
+        <nav class="nav">
+          <a href="#home">HOME</a>
+          <a href="#menu">MENU</a>
+          <a href="#news">NEWS</a>
+          <a href="#gallery">GALLERY</a>
+          <a href="#access">ADRESS</a>
+        </nav>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <img
+              src="images/instagramlogo.png"
+              alt="Instagram"
+              class="social-icon-img"
+            />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="images/xlogo.png" alt="X" class="social-icon-img" />
+          </a>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="hero-image">
+          <img
+            src="images/mainvisual.jpg"
+            alt="HAL Boulangerie"
+            class="hero-img"
+          />
+          <div class="hero-overlay">
+            <div class="overlay-text overlay-text-first">人波を抜けると、</div>
+            <div class="overlay-text overlay-text-second">
+              そこはオーベルニュ。
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="section about-section">
+      <h2 class="section-title">ABOUT</h2>
+      <div class="about-content">
+        <div class="about-image-left">
+          <img
+            src="images/about1.jpg"
+            alt="Boulangerie exterior"
+            class="about-img"
+          />
+        </div>
+        <div class="about-text-right">
+          <p class="about-description">
+            渋谷の喧騒を抜けた先に広がる、<br />
+            フランス・オーベルニュ地方の<br />
+            素朴な食文化。<br />火山の大地に育まれた伝統製法を大切に、<br />
+            毎日丁寧に焼き上げています。<br />都会にいながら、ゆっくりとした時間を<br />
+            味わってください。
+          </p>
+          <div class="about-image-bottom">
+            <img src="images/about2.jpg" alt="Baguettes" class="baguette-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="section menu-section">
+      <h2 class="section-title">MENU</h2>
+      <p class="menu-description">
+        小麦の風味を大切にしたシンプルなパンから、<br />手に取りやすい日常の一品まで。<br />素材の味を楽しめるラインナップです。
+      </p>
+      <div class="menu-container">
+        <h3 class="menu-subtitle">ALL MENU</h3>
+        <div class="menu-slider">
+          <button class="menu-nav-btn menu-nav-prev" data-target="allMenuCards">
+            ‹
+          </button>
+          <div class="menu-cards-wrapper" id="allMenuCards"></div>
+          <button class="menu-nav-btn menu-nav-next" data-target="allMenuCards">
+            ›
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-container">
+        <h3 class="menu-subtitle">FAVORITE MENU</h3>
+        <div class="menu-slider">
+          <button
+            class="menu-nav-btn menu-nav-prev"
+            data-target="favoriteMenuCards"
+          >
+            ‹
+          </button>
+          <div class="menu-cards-wrapper" id="favoriteMenuCards"></div>
+          <button
+            class="menu-nav-btn menu-nav-next"
+            data-target="favoriteMenuCards"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section recommendation-section">
+      <h2 class="section-title-jp">本日のおすすめ</h2>
+      <div class="recommendation-box">
+        <div class="recommendation-date">2025.12.18</div>
+        <div class="recommendation-items" id="recommendationItems"></div>
+        <div class="recommendation-time">
+          <p>焼きたてご用意時間</p>
+          <div class="time-slots">
+            <span>AM 8:00</span>
+            <span>AM 11:00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="section news-section">
+      <h2 class="section-title">NEWS</h2>
+      <div class="news-content">
+        <div class="news-list">
+          <div class="news-item">
+            <span class="news-date">2022.11.30</span>
+            <p class="news-text">
+              フランス　オーベルニュ地方の伝統パンや郷土料理の惣菜パンなどを販売するオーベルニュ地方フェアを開催いたします。
+            </p>
+          </div>
+          <div class="news-item">
+            <span class="news-date">2022.11.16</span>
+            <p class="news-text">
+              ご好評いただいております、デザートに、季節限定でオレンジを使用したデザートが加わります。
+            </p>
+          </div>
+          <div class="news-item">
+            <span class="news-date">2022.11.8</span>
+            <p class="news-text">
+              名産ブルーチーズ「フルム・ダンベール」を使ったパンや郷土料理をアレンジした惣菜パンなど、フェア限定商品をご用意しております。
+            </p>
+          </div>
+        </div>
+        <div class="news-links">
+          <div class="news-link-box">
+            <img src="images/blog.jpg" alt="BLOG" class="news-link-image" />
+            <p class="news-link-text">BLOG</p>
+          </div>
+          <div class="news-link-box">
+            <img src="images/works.jpg" alt="WORKS" class="news-link-image" />
+            <p class="news-link-text">WORKS</p>
+          </div>
+          <div class="news-link-box">
+            <img
+              src="images/contact.JPG"
+              alt="CONTACT"
+              class="news-link-image"
+            />
+            <p class="news-link-text">CONTACT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery-section">
+      <h2 class="section-title">GALLERY</h2>
+      <p class="gallery-description">#BoulangerieHAL で投稿お待ちしています!</p>
+      <div class="gallery-content">
+        <div class="gallery-card-stack">
+          <div class="gallery-card">
+            <img
+              src="images/image019.jpg"
+              alt="サンドウィッチ"
+              class="gallery-image"
+            />
+            <div class="gallery-text">
+              <p>とても美味しいサンドウィッチ!!</p>
+              <p class="gallery-hashtag">#BoulangerieHAL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="section address-section">
+      <h2 class="section-title">ADRESS</h2>
+      <div class="address-content">
+        <div class="map-container">
+          <div class="map-placeholder">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.1900120957516!2d139.7010593!3d35.647689899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b4f6383b351%3A0x72e7ab090ac2da6b!2z44CSMTUwLTAwMzMg5p2x5Lqs6YO95riL6LC35Yy654y_5qW955S677yS77yZ4oiS77yR77yYIELmo58g44OS44Or44K144Kk44OJ44OG44Op44K5!5e0!3m2!1sja!2sjp!4v1768446519527!5m2!1sja!2sjp"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+        <div class="address-info">
+          <h3 class="address-name">Boulangerie HAL</h3>
+          <p class="address-text">東京都渋谷区猿楽町29-18</p>
+          <p class="address-text">03-3344-1010</p>
+          <div class="access-info">
+            <p>東急東横線 代官山駅より 徒歩3分</p>
+            <p>日比谷線 恵比寿駅より 徒歩7分</p>
+            <p>JR山手線・埼京線 恵比寿駅より 徒歩10分</p>
+          </div>
+          <p class="hours">営業時間: 10:00~20:00</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <nav class="footer-nav">
+          <a href="#home">HOME</a>
+          <a href="#menu">MENU</a>
+          <a href="#news">NEWS</a>
+          <a href="#gallery">GALLERY</a>
+          <a href="#access">ADRESS</a>
+        </nav>
+        <div class="footer-logo">
+          <img
+            src="images/footerlogo.png"
+            alt="HAL Boulangerie"
+            class="footer-logo-img"
+          />
+        </div>
+      </div>
+      <div class="footer-copyright">©Boulangerie HAL.</div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
