@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 :root {
   --dark-green: #041406;
   --beige: #f5f0e8;
@@ -19,9 +23,17 @@
 }
 
 body {
+  overflow-x: hidden;
+  width: 100%;
   font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho", "HiraMinProN-W3", "HGS明朝E", "MS PMincho", serif;
   line-height: 1.6;
   color: #333;
+}
+
+/* 画像のレスポンシブ対応 */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Header */
@@ -660,8 +672,9 @@ body {
 .news-content {
   display: flex;
   gap: 40px;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .news-list {
@@ -883,6 +896,13 @@ body {
   color: #666;
   font-size: 1.2rem;
   border-radius: 8px;
+  overflow: hidden;
+}
+
+.map-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .address-info {
@@ -975,28 +995,525 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
+/* 大きな画面対応 (1241px以上) */
+@media (min-width: 1241px) {
+  .about-content,
+  .menu-container,
+  .menu-description,
+  .news-content,
+  .address-content,
+  .footer-content {
+    max-width: 1240px;
+  }
+}
+
+/* タブレット対応 (769px - 1024px) */
+@media (max-width: 1024px) {
+  .header-left {
+    width: 35%;
   }
 
-  .header-left,
   .header-right {
-    width: 100%;
+    width: 65%;
+  }
+
+  .logo-container {
+    padding-right: 100px;
+    transform: translate(-50px, 150px);
+  }
+
+  .logo-img {
+    max-width: 50%;
+  }
+
+  .nav {
+    transform: translate(-30px, 180px);
+  }
+
+  .hero-img {
+    width: calc(98% + 200px);
+    height: calc(98% + 200px);
+    right: -300px;
+  }
+
+  .hero-overlay {
+    right: -150px;
+    top: calc(50% + 180px);
+  }
+
+  .overlay-text {
+    font-size: calc(1rem + 15px);
+    padding: 12px 20px;
+  }
+
+  .overlay-text-second {
+    margin-left: 60px;
+  }
+
+  .section {
+    padding: 60px 30px;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 
   .about-content,
   .news-content,
   .address-content {
+    gap: 30px;
+  }
+
+  .menu-card {
+    min-width: 240px;
+    width: 240px;
+  }
+
+  .menu-cards-wrapper {
+    padding: 0 50px;
+  }
+
+  .gallery-card {
     flex-direction: column;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .news-link-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .news-link-image {
+    width: 100%;
+    height: auto;
+    order: 1;
+  }
+
+  .news-link-text {
+    order: 2;
+  }
+}
+
+/* スマートフォン対応 (768px以下) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .header-left {
+    width: 100%;
+    position: relative;
+    min-height: auto;
+    padding-bottom: 40px;
+    background-size: 100% auto;
+    background-position: center top;
+  }
+
+  .header-right {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .logo-container {
+    padding: 20px;
+    padding-right: 20px;
+    transform: none;
+    justify-content: center;
+  }
+
+  .logo-img {
+    max-width: 200px;
+  }
+
+  .nav {
+    transform: none;
+    margin-top: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  .social-icons {
+    transform: none;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .hero-image {
+    padding: 20px;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+  }
+
+  .hero-overlay {
+    position: relative;
+    right: 0;
+    top: 0;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  .overlay-text {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+  .overlay-text-second {
+    margin-left: 0;
+  }
+
+  .section {
+    padding: 40px 20px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .section-title-jp {
+    font-size: 1.8rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .about-img {
+    height: 250px;
+  }
+
+  .baguette-img {
+    height: 200px;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .menu-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .menu-container {
+    padding: 0 10px;
+  }
+
+  .menu-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .menu-card {
+    min-width: 200px;
+    width: 200px;
+  }
+
+  .menu-cards-wrapper {
+    padding: 0 50px;
+    gap: 20px;
+  }
+
+  .menu-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .menu-nav-prev {
+    left: 5px;
+  }
+
+  .menu-nav-next {
+    right: 5px;
+  }
+
+  .recommendation-section {
+    padding: 40px 20px;
+  }
+
+  .recommendation-box {
+    padding: 30px 20px;
+  }
+
+  .recommendation-date {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
   }
 
   .recommendation-items {
     flex-direction: column;
+    gap: 30px;
+  }
+
+  .rec-image {
+    height: 150px;
+  }
+
+  .rec-name {
+    font-size: 1.1rem;
+  }
+
+  .rec-price {
+    font-size: 1rem;
+  }
+
+  .rec-description {
+    font-size: 0.9rem;
+  }
+
+  .time-slots {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .time-slots span {
+    font-size: 1.1rem;
+  }
+
+  .news-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .news-list {
+    padding: 20px;
+  }
+
+  .news-item {
+    padding: 15px;
+  }
+
+  .news-date {
+    font-size: 0.85rem;
+  }
+
+  .news-text {
+    font-size: 0.95rem;
+  }
+
+  .news-link-box {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .news-link-image {
+    width: 100%;
+    height: 150px;
+    order: 1;
+  }
+
+  .news-link-text {
+    order: 2;
+    font-size: 1.1rem;
+  }
+
+  .gallery-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .gallery-content {
+    padding: 0 10px;
+  }
+
+  .gallery-card {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+  }
+
+  .gallery-text p {
+    font-size: 1rem;
+  }
+
+  .address-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .map-placeholder {
+    height: 300px;
+  }
+
+  .map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .address-info {
+    padding: 10px;
+  }
+
+  .address-name {
+    font-size: 1.5rem;
+  }
+
+  .address-text {
+    font-size: 1rem;
+  }
+
+  .access-info p {
+    font-size: 0.95rem;
+  }
+
+  .hours {
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding: 40px 20px 20px;
   }
 
   .footer-content {
     flex-direction: column;
     gap: 30px;
+    padding: 0 10px;
+  }
+
+  .footer-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-nav a {
+    font-size: 0.9rem;
+  }
+
+  .footer-logo-img {
+    max-width: 150px;
+  }
+
+  .footer-copyright {
+    font-size: 0.85rem;
+  }
+}
+
+/* 小さなスマートフォン対応 (480px以下) */
+@media (max-width: 480px) {
+  .section {
+    padding: 30px 15px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .section-title-jp {
+    font-size: 1.5rem;
+  }
+
+  .logo-img {
+    max-width: 150px;
+  }
+
+  .nav {
+    gap: 8px;
+  }
+
+  .nav a {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+
+  .overlay-text {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  .about-img {
+    height: 200px;
+  }
+
+  .baguette-img {
+    height: 150px;
+  }
+
+  .menu-card {
+    min-width: 180px;
+    width: 180px;
+  }
+
+  .menu-cards-wrapper {
+    padding: 0 40px;
+    gap: 15px;
+  }
+
+  .menu-nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+
+  .recommendation-box {
+    padding: 20px 15px;
+  }
+
+  .rec-image {
+    height: 120px;
+  }
+
+  .news-list {
+    padding: 15px;
+  }
+
+  .news-link-box {
+    padding: 15px;
+  }
+
+  .news-link-image {
+    height: 120px;
+  }
+
+  .gallery-card {
+    padding: 15px;
+  }
+
+  .gallery-image {
+    max-height: 200px;
+  }
+
+  .map-placeholder {
+    height: 250px;
+  }
+
+  .address-name {
+    font-size: 1.3rem;
   }
 }
